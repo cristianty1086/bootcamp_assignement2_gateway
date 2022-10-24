@@ -1,0 +1,33 @@
+server:
+  port: 9090
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+      - name: SCWGlobalFilter
+      routes:
+        - id: costumer
+          uri: http://localhost:8083
+          predicates:
+            - Path=/costumer/**
+        - id: bank_account
+          uri: http://localhost:8084/
+          predicates:
+            - Path=/bank_account/**
+        - id: movement
+          uri: http://localhost:8084/
+          predicates:
+            - Path=/movement/**
+        - id: credit_card
+          uri: http://localhost:8085/
+          predicates:
+            - Path=/credit_card/**
+        - id: credit_payment
+          uri: http://localhost:8085/
+          predicates:
+            - Path=/credit_payment/**
+        - id: credit
+          uri: http://localhost:8085/
+          predicates:
+            - Path=/credit/**
