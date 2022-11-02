@@ -38,7 +38,7 @@ jobs:
       with:
         context: ./
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_687fb5c03c164ae4bf155b9fb90b34b6 }}/ms37-gateway:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_687fb5c03c164ae4bf155b9fb90b34b6 }}/ms37-gateway:${{github.run_number }}
         file: ./Dockerfile
 
   deploy:
@@ -56,4 +56,4 @@ jobs:
         app-name: 'bootcamp37-gateway'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_d04b4fac6a9747c1a9ef9b15a256fffe }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_687fb5c03c164ae4bf155b9fb90b34b6 }}/ms37-gateway:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_687fb5c03c164ae4bf155b9fb90b34b6 }}/ms37-gateway:${{github.run_number }}'
