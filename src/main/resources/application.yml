@@ -8,26 +8,34 @@ spring:
       - name: SCWGlobalFilter
       routes:
         - id: costumer
-          uri: http://localhost:8083
+          uri: https://bootcamp37-costumers.azurewebsites.net
           predicates:
             - Path=/costumer/**
         - id: bank_account
-          uri: http://localhost:8084/
+          uri: https://bootcamp37-bankaccounts.azurewebsites.net
           predicates:
             - Path=/bank_account/**
         - id: movement
-          uri: http://localhost:8084/
+          uri: https://bootcamp37-bankaccounts.azurewebsites.net
           predicates:
             - Path=/movement/**
+        - id: debit_card
+          uri: https://bootcamp37-bankaccounts.azurewebsites.net
+          predicates:
+            - Path=/debit_card/**
+        - id: associate_bank_account
+          uri: https://bootcamp37-bankaccounts.azurewebsites.net
+          predicates:
+            - Path=/associate_bank_account/**
         - id: credit_card
-          uri: http://localhost:8085/
+          uri: https://bootcamp37-credits.azurewebsites.net
           predicates:
             - Path=/credit_card/**
         - id: credit_payment
-          uri: http://localhost:8085/
+          uri: https://bootcamp37-credits.azurewebsites.net
           predicates:
             - Path=/credit_payment/**
         - id: credit
-          uri: http://localhost:8085/
+          uri: https://bootcamp37-credits.azurewebsites.net
           predicates:
             - Path=/credit/**
